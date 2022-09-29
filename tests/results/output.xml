@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 5.0.1 (Python 3.10.4 on win32)" generated="20220930 01:00:39.985" rpa="false" schemaversion="3">
+<suite id="s1" name="demoCustomKeywords" source="D:\LearningAndProjects\RobotFramework\tests\demoCustomKeywords.robot">
+<test id="s1-t1" name="Show Log 1" line="6">
+<kw name="Add Product To Cart" library="CustomKeywordsDemo">
+<msg timestamp="20220930 01:00:40.013" level="INFO">HELLLLLLLLLLLLLOOOOOOOOOOOOOOOOOO</msg>
+<status status="PASS" starttime="20220930 01:00:40.013" endtime="20220930 01:00:40.013"/>
+</kw>
+<kw name="Take Argument Then Return" library="CustomKeywordsDemo">
+<var>${sum}</var>
+<arg>2</arg>
+<arg>3</arg>
+<msg timestamp="20220930 01:00:40.013" level="INFO">${sum} = 5</msg>
+<status status="PASS" starttime="20220930 01:00:40.013" endtime="20220930 01:00:40.013"/>
+</kw>
+<kw name="Log" library="BuiltIn">
+<arg>${sum}</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20220930 01:00:40.014" level="INFO">5</msg>
+<status status="PASS" starttime="20220930 01:00:40.014" endtime="20220930 01:00:40.014"/>
+</kw>
+<tag>Sanity</tag>
+<status status="PASS" starttime="20220930 01:00:40.012" endtime="20220930 01:00:40.014"/>
+</test>
+<test id="s1-t2" name="Show Log 2" line="12">
+<kw name="Add Product To Cart" library="CustomKeywordsDemo">
+<msg timestamp="20220930 01:00:40.015" level="INFO">HELLLLLLLLLLLLLOOOOOOOOOOOOOOOOOO</msg>
+<status status="PASS" starttime="20220930 01:00:40.015" endtime="20220930 01:00:40.015"/>
+</kw>
+<kw name="Take Argument Then Return" library="CustomKeywordsDemo">
+<var>${sum}</var>
+<arg>4</arg>
+<arg>5</arg>
+<msg timestamp="20220930 01:00:40.016" level="INFO">${sum} = 9</msg>
+<status status="PASS" starttime="20220930 01:00:40.015" endtime="20220930 01:00:40.016"/>
+</kw>
+<kw name="Log" library="BuiltIn">
+<arg>${sum}</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20220930 01:00:40.016" level="INFO">9</msg>
+<status status="PASS" starttime="20220930 01:00:40.016" endtime="20220930 01:00:40.016"/>
+</kw>
+<tag>Sanity</tag>
+<status status="PASS" starttime="20220930 01:00:40.015" endtime="20220930 01:00:40.017"/>
+</test>
+<test id="s1-t3" name="Show Log 3" line="18">
+<kw name="Add Product To Cart" library="CustomKeywordsDemo">
+<msg timestamp="20220930 01:00:40.018" level="INFO">HELLLLLLLLLLLLLOOOOOOOOOOOOOOOOOO</msg>
+<status status="PASS" starttime="20220930 01:00:40.018" endtime="20220930 01:00:40.018"/>
+</kw>
+<kw name="Take Argument Then Return" library="CustomKeywordsDemo">
+<var>${sum}</var>
+<arg>5</arg>
+<arg>6</arg>
+<msg timestamp="20220930 01:00:40.018" level="INFO">${sum} = 11</msg>
+<status status="PASS" starttime="20220930 01:00:40.018" endtime="20220930 01:00:40.018"/>
+</kw>
+<kw name="Log" library="BuiltIn">
+<arg>${sum}</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20220930 01:00:40.019" level="INFO">11</msg>
+<status status="PASS" starttime="20220930 01:00:40.018" endtime="20220930 01:00:40.019"/>
+</kw>
+<tag>Sanity</tag>
+<status status="PASS" starttime="20220930 01:00:40.017" endtime="20220930 01:00:40.019"/>
+</test>
+<doc>Demo Custom Keywords</doc>
+<status status="PASS" starttime="20220930 01:00:39.987" endtime="20220930 01:00:40.020"/>
+</suite>
+<statistics>
+<total>
+<stat pass="3" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+<stat pass="3" fail="0" skip="0">Sanity</stat>
+</tag>
+<suite>
+<stat pass="3" fail="0" skip="0" id="s1" name="demoCustomKeywords">demoCustomKeywords</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
