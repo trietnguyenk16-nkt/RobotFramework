@@ -1,0 +1,378 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 5.0.1 (Python 3.9.13 on win32)" generated="20221002 21:18:59.222" rpa="false" schemaversion="3">
+<suite id="s1" name="Tests" source="D:\LearningAndProjects\RobotFramework\tests">
+<suite id="s1-s1" name="TC01 Login Failed DataDriven CSV" source="D:\LearningAndProjects\RobotFramework\tests\TC01_Login_Failed_DataDriven_CSV.robot">
+<test id="s1-s1-t1" name="Invalid username" line="18">
+<kw name="Open Browser And Navigate To Page" library="SetUpTC" type="SETUP">
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>${url}</arg>
+<arg>${browser}</arg>
+<arg>executable_path=${executable_path}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20221002 21:19:14.819" level="INFO">Opening browser 'chrome' to base url 'https://www.rahulshettyacademy.com/loginpagePractise/'.</msg>
+<status status="PASS" starttime="20221002 21:19:14.787" endtime="20221002 21:19:23.674"/>
+</kw>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" starttime="20221002 21:19:23.677" endtime="20221002 21:19:23.945"/>
+</kw>
+<status status="PASS" starttime="20221002 21:19:14.775" endtime="20221002 21:19:23.946"/>
+</kw>
+<kw name="Login With Invalid Credentials">
+<arg>invalidUserName</arg>
+<arg>learning</arg>
+<kw name="Input User Name">
+<arg>${user_name}</arg>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${id_username}</arg>
+<arg>${user_name}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20221002 21:19:23.958" level="INFO">Typing text 'invalidUserName' into text field 'id:username'.</msg>
+<status status="PASS" starttime="20221002 21:19:23.956" endtime="20221002 21:19:24.884"/>
+</kw>
+<status status="PASS" starttime="20221002 21:19:23.951" endtime="20221002 21:19:24.885"/>
+</kw>
+<kw name="Input Password">
+<arg>${password}</arg>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${id_password}</arg>
+<arg>${password}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20221002 21:19:24.890" level="INFO">Typing text 'learning' into text field 'id:password'.</msg>
+<status status="PASS" starttime="20221002 21:19:24.888" endtime="20221002 21:19:25.400"/>
+</kw>
+<status status="PASS" starttime="20221002 21:19:24.887" endtime="20221002 21:19:25.401"/>
+</kw>
+<kw name="Check Agree checkbox">
+<kw name="Select Checkbox" library="SeleniumLibrary">
+<arg>${id_agree}</arg>
+<doc>Selects the checkbox identified by ``locator``.</doc>
+<msg timestamp="20221002 21:19:25.404" level="INFO">Selecting checkbox 'id:terms'.</msg>
+<status status="PASS" starttime="20221002 21:19:25.402" endtime="20221002 21:19:25.638"/>
+</kw>
+<status status="PASS" starttime="20221002 21:19:25.401" endtime="20221002 21:19:25.639"/>
+</kw>
+<kw name="Sign In And Verify Sign In Failed">
+<kw name="Click Button" library="SeleniumLibrary">
+<arg>${id_signin}</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<msg timestamp="20221002 21:19:25.643" level="INFO">Clicking button 'id:signInBtn'.</msg>
+<status status="PASS" starttime="20221002 21:19:25.641" endtime="20221002 21:19:25.787"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${xpath_alert_failed}</arg>
+<arg>3</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20221002 21:19:25.788" endtime="20221002 21:19:27.919"/>
+</kw>
+<kw name="Get Element Attribute" library="SeleniumLibrary">
+<var>${attribute}</var>
+<arg>${xpath_alert_failed}</arg>
+<arg>style</arg>
+<doc>Returns the value of ``attribute`` from the element ``locator``.</doc>
+<msg timestamp="20221002 21:19:27.975" level="INFO">${attribute} = display: block;</msg>
+<status status="PASS" starttime="20221002 21:19:27.920" endtime="20221002 21:19:27.975"/>
+</kw>
+<kw name="Should Contain" library="BuiltIn">
+<arg>${attribute}</arg>
+<arg>block</arg>
+<arg>Do not display alert message</arg>
+<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
+<status status="PASS" starttime="20221002 21:19:27.975" endtime="20221002 21:19:27.977"/>
+</kw>
+<status status="PASS" starttime="20221002 21:19:25.639" endtime="20221002 21:19:27.978"/>
+</kw>
+<kw name="Close All Browsers" library="SeleniumLibrary">
+<doc>Closes all open browsers and resets the browser cache.</doc>
+<status status="PASS" starttime="20221002 21:19:27.978" endtime="20221002 21:19:40.512"/>
+</kw>
+<status status="PASS" starttime="20221002 21:19:23.948" endtime="20221002 21:19:40.514"/>
+</kw>
+<status status="PASS" starttime="20221002 21:19:14.724" endtime="20221002 21:19:40.515"/>
+</test>
+<test id="s1-s1-t2" name="Invalid password" line="18">
+<kw name="Open Browser And Navigate To Page" library="SetUpTC" type="SETUP">
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>${url}</arg>
+<arg>${browser}</arg>
+<arg>executable_path=${executable_path}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20221002 21:19:40.532" level="INFO">Opening browser 'chrome' to base url 'https://www.rahulshettyacademy.com/loginpagePractise/'.</msg>
+<status status="PASS" starttime="20221002 21:19:40.523" endtime="20221002 21:19:52.778"/>
+</kw>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" starttime="20221002 21:19:52.780" endtime="20221002 21:19:53.114"/>
+</kw>
+<status status="PASS" starttime="20221002 21:19:40.521" endtime="20221002 21:19:53.115"/>
+</kw>
+<kw name="Login With Invalid Credentials">
+<arg>rahulshettyacademy</arg>
+<arg>invalidPassword</arg>
+<kw name="Input User Name">
+<arg>${user_name}</arg>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${id_username}</arg>
+<arg>${user_name}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20221002 21:19:53.129" level="INFO">Typing text 'rahulshettyacademy' into text field 'id:username'.</msg>
+<status status="PASS" starttime="20221002 21:19:53.120" endtime="20221002 21:19:53.463"/>
+</kw>
+<status status="PASS" starttime="20221002 21:19:53.118" endtime="20221002 21:19:53.464"/>
+</kw>
+<kw name="Input Password">
+<arg>${password}</arg>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${id_password}</arg>
+<arg>${password}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20221002 21:19:53.471" level="INFO">Typing text 'invalidPassword' into text field 'id:password'.</msg>
+<status status="PASS" starttime="20221002 21:19:53.468" endtime="20221002 21:19:53.777"/>
+</kw>
+<status status="PASS" starttime="20221002 21:19:53.465" endtime="20221002 21:19:53.778"/>
+</kw>
+<kw name="Check Agree checkbox">
+<kw name="Select Checkbox" library="SeleniumLibrary">
+<arg>${id_agree}</arg>
+<doc>Selects the checkbox identified by ``locator``.</doc>
+<msg timestamp="20221002 21:19:53.783" level="INFO">Selecting checkbox 'id:terms'.</msg>
+<status status="PASS" starttime="20221002 21:19:53.781" endtime="20221002 21:19:53.980"/>
+</kw>
+<status status="PASS" starttime="20221002 21:19:53.779" endtime="20221002 21:19:53.981"/>
+</kw>
+<kw name="Sign In And Verify Sign In Failed">
+<kw name="Click Button" library="SeleniumLibrary">
+<arg>${id_signin}</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<msg timestamp="20221002 21:19:53.986" level="INFO">Clicking button 'id:signInBtn'.</msg>
+<status status="PASS" starttime="20221002 21:19:53.983" endtime="20221002 21:19:54.163"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${xpath_alert_failed}</arg>
+<arg>3</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20221002 21:19:54.165" endtime="20221002 21:19:56.361"/>
+</kw>
+<kw name="Get Element Attribute" library="SeleniumLibrary">
+<var>${attribute}</var>
+<arg>${xpath_alert_failed}</arg>
+<arg>style</arg>
+<doc>Returns the value of ``attribute`` from the element ``locator``.</doc>
+<msg timestamp="20221002 21:19:56.417" level="INFO">${attribute} = display: block;</msg>
+<status status="PASS" starttime="20221002 21:19:56.361" endtime="20221002 21:19:56.417"/>
+</kw>
+<kw name="Should Contain" library="BuiltIn">
+<arg>${attribute}</arg>
+<arg>block</arg>
+<arg>Do not display alert message</arg>
+<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
+<status status="PASS" starttime="20221002 21:19:56.418" endtime="20221002 21:19:56.421"/>
+</kw>
+<status status="PASS" starttime="20221002 21:19:53.982" endtime="20221002 21:19:56.421"/>
+</kw>
+<kw name="Close All Browsers" library="SeleniumLibrary">
+<doc>Closes all open browsers and resets the browser cache.</doc>
+<status status="PASS" starttime="20221002 21:19:56.422" endtime="20221002 21:19:59.101"/>
+</kw>
+<status status="PASS" starttime="20221002 21:19:53.116" endtime="20221002 21:19:59.101"/>
+</kw>
+<status status="PASS" starttime="20221002 21:19:40.517" endtime="20221002 21:19:59.103"/>
+</test>
+<test id="s1-s1-t3" name="Invalid both" line="18">
+<kw name="Open Browser And Navigate To Page" library="SetUpTC" type="SETUP">
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>${url}</arg>
+<arg>${browser}</arg>
+<arg>executable_path=${executable_path}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20221002 21:19:59.119" level="INFO">Opening browser 'chrome' to base url 'https://www.rahulshettyacademy.com/loginpagePractise/'.</msg>
+<status status="PASS" starttime="20221002 21:19:59.118" endtime="20221002 21:20:02.311"/>
+</kw>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" starttime="20221002 21:20:02.312" endtime="20221002 21:20:02.456"/>
+</kw>
+<status status="PASS" starttime="20221002 21:19:59.113" endtime="20221002 21:20:02.456"/>
+</kw>
+<kw name="Login With Invalid Credentials">
+<arg>invalidUserName</arg>
+<arg>invalidPassword</arg>
+<kw name="Input User Name">
+<arg>${user_name}</arg>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${id_username}</arg>
+<arg>${user_name}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20221002 21:20:02.461" level="INFO">Typing text 'invalidUserName' into text field 'id:username'.</msg>
+<status status="PASS" starttime="20221002 21:20:02.459" endtime="20221002 21:20:02.716"/>
+</kw>
+<status status="PASS" starttime="20221002 21:20:02.458" endtime="20221002 21:20:02.717"/>
+</kw>
+<kw name="Input Password">
+<arg>${password}</arg>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${id_password}</arg>
+<arg>${password}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20221002 21:20:02.720" level="INFO">Typing text 'invalidPassword' into text field 'id:password'.</msg>
+<status status="PASS" starttime="20221002 21:20:02.718" endtime="20221002 21:20:02.883"/>
+</kw>
+<status status="PASS" starttime="20221002 21:20:02.717" endtime="20221002 21:20:02.883"/>
+</kw>
+<kw name="Check Agree checkbox">
+<kw name="Select Checkbox" library="SeleniumLibrary">
+<arg>${id_agree}</arg>
+<doc>Selects the checkbox identified by ``locator``.</doc>
+<msg timestamp="20221002 21:20:02.893" level="INFO">Selecting checkbox 'id:terms'.</msg>
+<status status="PASS" starttime="20221002 21:20:02.890" endtime="20221002 21:20:03.036"/>
+</kw>
+<status status="PASS" starttime="20221002 21:20:02.887" endtime="20221002 21:20:03.036"/>
+</kw>
+<kw name="Sign In And Verify Sign In Failed">
+<kw name="Click Button" library="SeleniumLibrary">
+<arg>${id_signin}</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<msg timestamp="20221002 21:20:03.039" level="INFO">Clicking button 'id:signInBtn'.</msg>
+<status status="PASS" starttime="20221002 21:20:03.038" endtime="20221002 21:20:03.149"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${xpath_alert_failed}</arg>
+<arg>3</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20221002 21:20:03.150" endtime="20221002 21:20:05.301"/>
+</kw>
+<kw name="Get Element Attribute" library="SeleniumLibrary">
+<var>${attribute}</var>
+<arg>${xpath_alert_failed}</arg>
+<arg>style</arg>
+<doc>Returns the value of ``attribute`` from the element ``locator``.</doc>
+<msg timestamp="20221002 21:20:05.335" level="INFO">${attribute} = display: block;</msg>
+<status status="PASS" starttime="20221002 21:20:05.301" endtime="20221002 21:20:05.335"/>
+</kw>
+<kw name="Should Contain" library="BuiltIn">
+<arg>${attribute}</arg>
+<arg>block</arg>
+<arg>Do not display alert message</arg>
+<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
+<status status="PASS" starttime="20221002 21:20:05.335" endtime="20221002 21:20:05.336"/>
+</kw>
+<status status="PASS" starttime="20221002 21:20:03.037" endtime="20221002 21:20:05.337"/>
+</kw>
+<kw name="Close All Browsers" library="SeleniumLibrary">
+<doc>Closes all open browsers and resets the browser cache.</doc>
+<status status="PASS" starttime="20221002 21:20:05.338" endtime="20221002 21:20:07.621"/>
+</kw>
+<status status="PASS" starttime="20221002 21:20:02.457" endtime="20221002 21:20:07.621"/>
+</kw>
+<status status="PASS" starttime="20221002 21:19:59.106" endtime="20221002 21:20:07.621"/>
+</test>
+<test id="s1-s1-t4" name="Login With Credentials x and x" line="18">
+<kw name="Open Browser And Navigate To Page" library="SetUpTC" type="SETUP">
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>${url}</arg>
+<arg>${browser}</arg>
+<arg>executable_path=${executable_path}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20221002 21:20:07.630" level="INFO">Opening browser 'chrome' to base url 'https://www.rahulshettyacademy.com/loginpagePractise/'.</msg>
+<status status="PASS" starttime="20221002 21:20:07.629" endtime="20221002 21:20:09.709"/>
+</kw>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" starttime="20221002 21:20:09.710" endtime="20221002 21:20:09.854"/>
+</kw>
+<status status="PASS" starttime="20221002 21:20:07.626" endtime="20221002 21:20:09.855"/>
+</kw>
+<kw name="Login With Invalid Credentials">
+<arg>x</arg>
+<arg>x</arg>
+<kw name="Input User Name">
+<arg>${user_name}</arg>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${id_username}</arg>
+<arg>${user_name}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20221002 21:20:09.860" level="INFO">Typing text 'x' into text field 'id:username'.</msg>
+<status status="PASS" starttime="20221002 21:20:09.859" endtime="20221002 21:20:10.060"/>
+</kw>
+<status status="PASS" starttime="20221002 21:20:09.857" endtime="20221002 21:20:10.061"/>
+</kw>
+<kw name="Input Password">
+<arg>${password}</arg>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${id_password}</arg>
+<arg>${password}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20221002 21:20:10.064" level="INFO">Typing text 'x' into text field 'id:password'.</msg>
+<status status="PASS" starttime="20221002 21:20:10.063" endtime="20221002 21:20:10.203"/>
+</kw>
+<status status="PASS" starttime="20221002 21:20:10.062" endtime="20221002 21:20:10.203"/>
+</kw>
+<kw name="Check Agree checkbox">
+<kw name="Select Checkbox" library="SeleniumLibrary">
+<arg>${id_agree}</arg>
+<doc>Selects the checkbox identified by ``locator``.</doc>
+<msg timestamp="20221002 21:20:10.206" level="INFO">Selecting checkbox 'id:terms'.</msg>
+<status status="PASS" starttime="20221002 21:20:10.205" endtime="20221002 21:20:10.339"/>
+</kw>
+<status status="PASS" starttime="20221002 21:20:10.204" endtime="20221002 21:20:10.339"/>
+</kw>
+<kw name="Sign In And Verify Sign In Failed">
+<kw name="Click Button" library="SeleniumLibrary">
+<arg>${id_signin}</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<msg timestamp="20221002 21:20:10.341" level="INFO">Clicking button 'id:signInBtn'.</msg>
+<status status="PASS" starttime="20221002 21:20:10.340" endtime="20221002 21:20:10.431"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${xpath_alert_failed}</arg>
+<arg>3</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20221002 21:20:10.431" endtime="20221002 21:20:12.539"/>
+</kw>
+<kw name="Get Element Attribute" library="SeleniumLibrary">
+<var>${attribute}</var>
+<arg>${xpath_alert_failed}</arg>
+<arg>style</arg>
+<doc>Returns the value of ``attribute`` from the element ``locator``.</doc>
+<msg timestamp="20221002 21:20:12.570" level="INFO">${attribute} = display: block;</msg>
+<status status="PASS" starttime="20221002 21:20:12.539" endtime="20221002 21:20:12.570"/>
+</kw>
+<kw name="Should Contain" library="BuiltIn">
+<arg>${attribute}</arg>
+<arg>block</arg>
+<arg>Do not display alert message</arg>
+<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
+<status status="PASS" starttime="20221002 21:20:12.571" endtime="20221002 21:20:12.572"/>
+</kw>
+<status status="PASS" starttime="20221002 21:20:10.340" endtime="20221002 21:20:12.572"/>
+</kw>
+<kw name="Close All Browsers" library="SeleniumLibrary">
+<doc>Closes all open browsers and resets the browser cache.</doc>
+<status status="PASS" starttime="20221002 21:20:12.572" endtime="20221002 21:20:14.881"/>
+</kw>
+<status status="PASS" starttime="20221002 21:20:09.856" endtime="20221002 21:20:14.881"/>
+</kw>
+<status status="PASS" starttime="20221002 21:20:07.624" endtime="20221002 21:20:14.883"/>
+</test>
+<doc>This TC is to test login failed scenario</doc>
+<status status="PASS" starttime="20221002 21:18:59.270" endtime="20221002 21:20:14.889"/>
+</suite>
+<status status="PASS" starttime="20221002 21:18:59.241" endtime="20221002 21:20:14.894"/>
+</suite>
+<statistics>
+<total>
+<stat pass="4" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="4" fail="0" skip="0" id="s1" name="Tests">Tests</stat>
+<stat pass="4" fail="0" skip="0" id="s1-s1" name="TC01 Login Failed DataDriven CSV">Tests.TC01 Login Failed DataDriven CSV</stat>
+</suite>
+</statistics>
+<errors>
+<msg timestamp="20221002 21:19:14.693" level="ERROR">Connection to remote server broken: [WinError 10061] No connection could be made because the target machine actively refused it</msg>
+<msg timestamp="20221002 21:19:14.695" level="ERROR">Unable to connect to PabotLib via '127.0.0.1:8270'! Is PabotLib in use? Try 'pabot --pabotlib'</msg>
+<msg timestamp="20221002 21:19:14.695" level="ERROR">Execution as been processes without --testlevelsplit</msg>
+</errors>
+</robot>

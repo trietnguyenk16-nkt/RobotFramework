@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 5.0.1 (Python 3.9.13 on win32)" generated="20221002 21:19:29.343" rpa="false" schemaversion="3">
+<suite id="s1" name="Tests" source="D:\LearningAndProjects\RobotFramework\tests">
+<suite id="s1-s1" name="TC01 Login Failed With PabotLib" source="D:\LearningAndProjects\RobotFramework\tests\TC01_Login_Failed_With_PabotLib.robot">
+<test id="s1-s1-t1" name="Validate Login Failed With Incorrect Password" line="24">
+<kw name="Open Browser And Navigate To Page" library="SetUpTC" type="SETUP">
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>${url}</arg>
+<arg>${browser}</arg>
+<arg>executable_path=${executable_path}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20221002 21:19:30.381" level="INFO">Opening browser 'chrome' to base url 'https://www.rahulshettyacademy.com/loginpagePractise/'.</msg>
+<status status="PASS" starttime="20221002 21:19:30.378" endtime="20221002 21:19:38.956"/>
+</kw>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" starttime="20221002 21:19:38.957" endtime="20221002 21:19:39.996"/>
+</kw>
+<status status="PASS" starttime="20221002 21:19:30.376" endtime="20221002 21:19:40.007"/>
+</kw>
+<kw name="Input User Name">
+<arg>rahulshettyacademy</arg>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${id_username}</arg>
+<arg>${user_name}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20221002 21:19:40.023" level="INFO">Typing text 'rahulshettyacademy' into text field 'id:username'.</msg>
+<status status="PASS" starttime="20221002 21:19:40.020" endtime="20221002 21:19:43.433"/>
+</kw>
+<status status="PASS" starttime="20221002 21:19:40.008" endtime="20221002 21:19:43.435"/>
+</kw>
+<kw name="Input Password">
+<arg>invalidPassword</arg>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${id_password}</arg>
+<arg>${password}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20221002 21:19:43.440" level="INFO">Typing text 'invalidPassword' into text field 'id:password'.</msg>
+<status status="PASS" starttime="20221002 21:19:43.438" endtime="20221002 21:19:44.015"/>
+</kw>
+<status status="PASS" starttime="20221002 21:19:43.436" endtime="20221002 21:19:44.016"/>
+</kw>
+<kw name="Check Agree checkbox">
+<kw name="Select Checkbox" library="SeleniumLibrary">
+<arg>${id_agree}</arg>
+<doc>Selects the checkbox identified by ``locator``.</doc>
+<msg timestamp="20221002 21:19:44.020" level="INFO">Selecting checkbox 'id:terms'.</msg>
+<status status="PASS" starttime="20221002 21:19:44.018" endtime="20221002 21:19:44.352"/>
+</kw>
+<status status="PASS" starttime="20221002 21:19:44.017" endtime="20221002 21:19:44.355"/>
+</kw>
+<kw name="Sign In And Verify Sign In Failed">
+<kw name="Click Button" library="SeleniumLibrary">
+<arg>${id_signin}</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<msg timestamp="20221002 21:19:44.359" level="INFO">Clicking button 'id:signInBtn'.</msg>
+<status status="PASS" starttime="20221002 21:19:44.358" endtime="20221002 21:19:44.972"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${xpath_alert_failed}</arg>
+<arg>3</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20221002 21:19:44.973" endtime="20221002 21:19:47.305"/>
+</kw>
+<kw name="Get Element Attribute" library="SeleniumLibrary">
+<var>${attribute}</var>
+<arg>${xpath_alert_failed}</arg>
+<arg>style</arg>
+<doc>Returns the value of ``attribute`` from the element ``locator``.</doc>
+<msg timestamp="20221002 21:19:47.678" level="INFO">${attribute} = display: block;</msg>
+<status status="PASS" starttime="20221002 21:19:47.307" endtime="20221002 21:19:47.678"/>
+</kw>
+<kw name="Should Contain" library="BuiltIn">
+<arg>${attribute}</arg>
+<arg>block</arg>
+<arg>Do not display alert message</arg>
+<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
+<status status="PASS" starttime="20221002 21:19:47.679" endtime="20221002 21:19:47.680"/>
+</kw>
+<status status="PASS" starttime="20221002 21:19:44.356" endtime="20221002 21:19:47.681"/>
+</kw>
+<kw name="Close All Browsers" library="SeleniumLibrary">
+<doc>Closes all open browsers and resets the browser cache.</doc>
+<status status="PASS" starttime="20221002 21:19:47.682" endtime="20221002 21:19:55.109"/>
+</kw>
+<status status="PASS" starttime="20221002 21:19:30.373" endtime="20221002 21:19:55.112"/>
+</test>
+<doc>This TC is to test login failed scenario</doc>
+<status status="PASS" starttime="20221002 21:19:29.548" endtime="20221002 21:19:55.123"/>
+</suite>
+<status status="PASS" starttime="20221002 21:19:29.410" endtime="20221002 21:19:55.132"/>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="1" fail="0" skip="0" id="s1" name="Tests">Tests</stat>
+<stat pass="1" fail="0" skip="0" id="s1-s1" name="TC01 Login Failed With PabotLib">Tests.TC01 Login Failed With PabotLib</stat>
+</suite>
+</statistics>
+<errors>
+<msg timestamp="20221002 21:19:57.525" level="ERROR">RuntimeError catched in remotelib keyword execution. Maybe there is no connection - is pabot called with --pabotlib option? ErrorDetails: RuntimeError('Connection to remote server broken: [WinError 10061] No connection could be made because the target machine actively refused it')</msg>
+</errors>
+</robot>

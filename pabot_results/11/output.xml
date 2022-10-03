@@ -1,0 +1,426 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 5.0.1 (Python 3.9.13 on win32)" generated="20221002 21:19:29.992" rpa="false" schemaversion="3">
+<suite id="s1" name="Tests" source="D:\LearningAndProjects\RobotFramework\tests">
+<suite id="s1-s1" name="TC02 Order Cart" source="D:\LearningAndProjects\RobotFramework\tests\TC02_Order_Cart.robot">
+<test id="s1-s1-t1" name="Order Cart" line="20">
+<kw name="Open Browser And Navigate To Page" library="SetUpTC" type="SETUP">
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>${url}</arg>
+<arg>${browser}</arg>
+<arg>executable_path=${executable_path}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20221002 21:19:30.777" level="INFO">Opening browser 'chrome' to base url 'https://www.rahulshettyacademy.com/loginpagePractise/'.</msg>
+<status status="PASS" starttime="20221002 21:19:30.771" endtime="20221002 21:19:40.175"/>
+</kw>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" starttime="20221002 21:19:40.176" endtime="20221002 21:19:40.468"/>
+</kw>
+<status status="PASS" starttime="20221002 21:19:30.767" endtime="20221002 21:19:40.469"/>
+</kw>
+<kw name="fill the login form">
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${id_username}</arg>
+<arg>rahulshettyacademy</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20221002 21:19:40.472" level="INFO">Typing text 'rahulshettyacademy' into text field 'id:username'.</msg>
+<status status="PASS" starttime="20221002 21:19:40.471" endtime="20221002 21:19:42.821"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${id_password}</arg>
+<arg>learning</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20221002 21:19:42.823" level="INFO">Typing text 'learning' into text field 'id:password'.</msg>
+<status status="PASS" starttime="20221002 21:19:42.822" endtime="20221002 21:19:43.494"/>
+</kw>
+<kw name="Select Checkbox" library="SeleniumLibrary">
+<arg>${id_agree}</arg>
+<doc>Selects the checkbox identified by ``locator``.</doc>
+<msg timestamp="20221002 21:19:43.499" level="INFO">Selecting checkbox 'id:terms'.</msg>
+<status status="PASS" starttime="20221002 21:19:43.495" endtime="20221002 21:19:43.903"/>
+</kw>
+<kw name="Click Button" library="SeleniumLibrary">
+<arg>${id_signin}</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<msg timestamp="20221002 21:19:43.905" level="INFO">Clicking button 'id:signInBtn'.</msg>
+<status status="PASS" starttime="20221002 21:19:43.904" endtime="20221002 21:19:44.282"/>
+</kw>
+<status status="PASS" starttime="20221002 21:19:40.470" endtime="20221002 21:19:44.282"/>
+</kw>
+<kw name="Verify login successfully">
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${xpath_text}</arg>
+<arg>10</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20221002 21:19:44.284" endtime="20221002 21:19:49.725"/>
+</kw>
+<kw name="Element Text Should Be" library="SeleniumLibrary">
+<arg>${xpath_text}</arg>
+<arg>ProtoCommerce Home</arg>
+<arg>Sigin</arg>
+<doc>Verifies that element ``locator`` contains exact the text ``expected``.</doc>
+<msg timestamp="20221002 21:19:49.728" level="INFO">Verifying element '//div[@class='container']/a' contains exact text 'ProtoCommerce Home'.</msg>
+<status status="PASS" starttime="20221002 21:19:49.727" endtime="20221002 21:19:49.839"/>
+</kw>
+<status status="PASS" starttime="20221002 21:19:44.283" endtime="20221002 21:19:49.841"/>
+</kw>
+<kw name="Add IphoneX and Samsung Note8 to cart">
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${xpath_list_product_to_cart}</arg>
+<arg>10</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20221002 21:19:49.844" endtime="20221002 21:19:50.148"/>
+</kw>
+<kw name="Get WebElements" library="SeleniumLibrary">
+<var>@{list_proudct_webelements}</var>
+<arg>${xpath_list_product_to_cart}</arg>
+<doc>Returns a list of WebElement objects matching the ``locator``.</doc>
+<msg timestamp="20221002 21:19:50.345" level="INFO">@{list_proudct_webelements} = [ &lt;selenium.webdriver.remote.webelement.WebElement (session="f01179137500b476588f6d429ddd8b3b", element="7f75bad8-fdd6-4e73-816a-469b094aa995")&gt; | &lt;selenium.webdriver.remote.webelement.WebElement (ses...</msg>
+<status status="PASS" starttime="20221002 21:19:50.149" endtime="20221002 21:19:50.345"/>
+</kw>
+<for flavor="IN">
+<var>${product_webelement}</var>
+<value>@{list_proudct_webelements}</value>
+<iter>
+<var name="${product_webelement}">&lt;selenium.webdriver.remote.webelement.WebElement (session="f01179137500b476588f6d429ddd8b3b", element="7f75bad8-fdd6-4e73-816a-469b094aa995")&gt;</var>
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${product}</var>
+<arg>${product_webelement}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20221002 21:19:50.404" level="INFO">${product} = iphone X</msg>
+<status status="PASS" starttime="20221002 21:19:50.348" endtime="20221002 21:19:50.405"/>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<var>${index}</var>
+<arg>0</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<msg timestamp="20221002 21:19:50.406" level="INFO">${index} = 0</msg>
+<status status="PASS" starttime="20221002 21:19:50.405" endtime="20221002 21:19:50.406"/>
+</kw>
+<if>
+<branch type="IF" condition="'${product}' in ${list_product}">
+<kw name="Get Index From List" library="Collections">
+<var>${index}</var>
+<arg>${list_proudct_webelements}</arg>
+<arg>${product_webelement}</arg>
+<doc>Returns the index of the first occurrence of the ``value`` on the list.</doc>
+<msg timestamp="20221002 21:19:50.409" level="INFO">${index} = 0</msg>
+<status status="PASS" starttime="20221002 21:19:50.408" endtime="20221002 21:19:50.409"/>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<var>${index}</var>
+<arg>${index + 1}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<msg timestamp="20221002 21:19:50.415" level="INFO">${index} = 1</msg>
+<status status="PASS" starttime="20221002 21:19:50.409" endtime="20221002 21:19:50.415"/>
+</kw>
+<kw name="Click Button" library="SeleniumLibrary">
+<arg>(//div[@class='card-footer']/button)[${index}]</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<msg timestamp="20221002 21:19:50.417" level="INFO">Clicking button '(//div[@class='card-footer']/button)[1]'.</msg>
+<status status="PASS" starttime="20221002 21:19:50.415" endtime="20221002 21:19:50.809"/>
+</kw>
+<status status="PASS" starttime="20221002 21:19:50.407" endtime="20221002 21:19:50.810"/>
+</branch>
+<status status="PASS" starttime="20221002 21:19:50.406" endtime="20221002 21:19:50.810"/>
+</if>
+<status status="PASS" starttime="20221002 21:19:50.347" endtime="20221002 21:19:50.810"/>
+</iter>
+<iter>
+<var name="${product_webelement}">&lt;selenium.webdriver.remote.webelement.WebElement (session="f01179137500b476588f6d429ddd8b3b", element="7af8e254-e3d3-43e8-8181-bfb0b6ef149e")&gt;</var>
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${product}</var>
+<arg>${product_webelement}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20221002 21:19:50.852" level="INFO">${product} = Samsung Note 8</msg>
+<status status="PASS" starttime="20221002 21:19:50.812" endtime="20221002 21:19:50.852"/>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<var>${index}</var>
+<arg>0</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<msg timestamp="20221002 21:19:50.854" level="INFO">${index} = 0</msg>
+<status status="PASS" starttime="20221002 21:19:50.853" endtime="20221002 21:19:50.854"/>
+</kw>
+<if>
+<branch type="IF" condition="'${product}' in ${list_product}">
+<kw name="Get Index From List" library="Collections">
+<var>${index}</var>
+<arg>${list_proudct_webelements}</arg>
+<arg>${product_webelement}</arg>
+<doc>Returns the index of the first occurrence of the ``value`` on the list.</doc>
+<msg timestamp="20221002 21:19:50.857" level="INFO">${index} = 1</msg>
+<status status="PASS" starttime="20221002 21:19:50.856" endtime="20221002 21:19:50.857"/>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<var>${index}</var>
+<arg>${index + 1}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<msg timestamp="20221002 21:19:50.860" level="INFO">${index} = 2</msg>
+<status status="PASS" starttime="20221002 21:19:50.857" endtime="20221002 21:19:50.860"/>
+</kw>
+<kw name="Click Button" library="SeleniumLibrary">
+<arg>(//div[@class='card-footer']/button)[${index}]</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<msg timestamp="20221002 21:19:50.862" level="INFO">Clicking button '(//div[@class='card-footer']/button)[2]'.</msg>
+<status status="PASS" starttime="20221002 21:19:50.861" endtime="20221002 21:19:51.447"/>
+</kw>
+<status status="PASS" starttime="20221002 21:19:50.855" endtime="20221002 21:19:51.448"/>
+</branch>
+<status status="PASS" starttime="20221002 21:19:50.854" endtime="20221002 21:19:51.448"/>
+</if>
+<status status="PASS" starttime="20221002 21:19:50.811" endtime="20221002 21:19:51.448"/>
+</iter>
+<iter>
+<var name="${product_webelement}">&lt;selenium.webdriver.remote.webelement.WebElement (session="f01179137500b476588f6d429ddd8b3b", element="752e6c5d-63b3-4b6d-b262-e47d4009f5d2")&gt;</var>
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${product}</var>
+<arg>${product_webelement}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20221002 21:19:51.528" level="INFO">${product} = Nokia Edge</msg>
+<status status="PASS" starttime="20221002 21:19:51.449" endtime="20221002 21:19:51.528"/>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<var>${index}</var>
+<arg>0</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<msg timestamp="20221002 21:19:51.529" level="INFO">${index} = 0</msg>
+<status status="PASS" starttime="20221002 21:19:51.529" endtime="20221002 21:19:51.529"/>
+</kw>
+<if>
+<branch type="IF" condition="'${product}' in ${list_product}">
+<kw name="Get Index From List" library="Collections">
+<var>${index}</var>
+<arg>${list_proudct_webelements}</arg>
+<arg>${product_webelement}</arg>
+<doc>Returns the index of the first occurrence of the ``value`` on the list.</doc>
+<status status="NOT RUN" starttime="20221002 21:19:51.534" endtime="20221002 21:19:51.535"/>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<var>${index}</var>
+<arg>${index + 1}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="NOT RUN" starttime="20221002 21:19:51.535" endtime="20221002 21:19:51.536"/>
+</kw>
+<kw name="Click Button" library="SeleniumLibrary">
+<arg>(//div[@class='card-footer']/button)[${index}]</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="NOT RUN" starttime="20221002 21:19:51.536" endtime="20221002 21:19:51.536"/>
+</kw>
+<status status="NOT RUN" starttime="20221002 21:19:51.532" endtime="20221002 21:19:51.536"/>
+</branch>
+<status status="PASS" starttime="20221002 21:19:51.530" endtime="20221002 21:19:51.536"/>
+</if>
+<status status="PASS" starttime="20221002 21:19:51.448" endtime="20221002 21:19:51.536"/>
+</iter>
+<iter>
+<var name="${product_webelement}">&lt;selenium.webdriver.remote.webelement.WebElement (session="f01179137500b476588f6d429ddd8b3b", element="fa498a2a-1db7-47b8-8bd5-f4653218bbe9")&gt;</var>
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${product}</var>
+<arg>${product_webelement}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20221002 21:19:51.568" level="INFO">${product} = Blackberry</msg>
+<status status="PASS" starttime="20221002 21:19:51.537" endtime="20221002 21:19:51.568"/>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<var>${index}</var>
+<arg>0</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<msg timestamp="20221002 21:19:51.570" level="INFO">${index} = 0</msg>
+<status status="PASS" starttime="20221002 21:19:51.569" endtime="20221002 21:19:51.570"/>
+</kw>
+<if>
+<branch type="IF" condition="'${product}' in ${list_product}">
+<kw name="Get Index From List" library="Collections">
+<var>${index}</var>
+<arg>${list_proudct_webelements}</arg>
+<arg>${product_webelement}</arg>
+<doc>Returns the index of the first occurrence of the ``value`` on the list.</doc>
+<status status="NOT RUN" starttime="20221002 21:19:51.571" endtime="20221002 21:19:51.571"/>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<var>${index}</var>
+<arg>${index + 1}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="NOT RUN" starttime="20221002 21:19:51.571" endtime="20221002 21:19:51.571"/>
+</kw>
+<kw name="Click Button" library="SeleniumLibrary">
+<arg>(//div[@class='card-footer']/button)[${index}]</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="NOT RUN" starttime="20221002 21:19:51.572" endtime="20221002 21:19:51.572"/>
+</kw>
+<status status="NOT RUN" starttime="20221002 21:19:51.570" endtime="20221002 21:19:51.572"/>
+</branch>
+<status status="PASS" starttime="20221002 21:19:51.570" endtime="20221002 21:19:51.572"/>
+</if>
+<status status="PASS" starttime="20221002 21:19:51.537" endtime="20221002 21:19:51.572"/>
+</iter>
+<status status="PASS" starttime="20221002 21:19:50.346" endtime="20221002 21:19:51.572"/>
+</for>
+<status status="PASS" starttime="20221002 21:19:49.842" endtime="20221002 21:19:51.573"/>
+</kw>
+<kw name="Go to Checkout page">
+<kw name="Scroll Element Into View" library="SeleniumLibrary">
+<arg>//a[contains(text(),'Checkout')]</arg>
+<doc>Scrolls the element identified by ``locator`` into view.</doc>
+<status status="PASS" starttime="20221002 21:19:51.574" endtime="20221002 21:19:52.014"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>//a[contains(text(),'Checkout')]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20221002 21:19:52.019" level="INFO">Clicking element '//a[contains(text(),'Checkout')]'.</msg>
+<status status="PASS" starttime="20221002 21:19:52.015" endtime="20221002 21:19:52.207"/>
+</kw>
+<status status="PASS" starttime="20221002 21:19:51.573" endtime="20221002 21:19:52.208"/>
+</kw>
+<kw name="Check the products in cart">
+<kw name="Get WebElements" library="SeleniumLibrary">
+<var>@{list_product_webelement}</var>
+<arg>${xpath_list_product_cart_page}</arg>
+<doc>Returns a list of WebElement objects matching the ``locator``.</doc>
+<msg timestamp="20221002 21:19:52.247" level="INFO">@{list_product_webelement} = [ &lt;selenium.webdriver.remote.webelement.WebElement (session="f01179137500b476588f6d429ddd8b3b", element="f6116a5a-32e7-4bad-93a3-c3362fd9f9d2")&gt; | &lt;selenium.webdriver.remote.webelement.WebElement (ses...</msg>
+<status status="PASS" starttime="20221002 21:19:52.209" endtime="20221002 21:19:52.247"/>
+</kw>
+<kw name="Create List" library="BuiltIn">
+<var>@{list_product_actual}</var>
+<doc>Returns a list containing given items.</doc>
+<msg timestamp="20221002 21:19:52.249" level="INFO">@{list_product_actual} = [ ]</msg>
+<status status="PASS" starttime="20221002 21:19:52.248" endtime="20221002 21:19:52.249"/>
+</kw>
+<for flavor="IN">
+<var>${product_webelement}</var>
+<value>@{list_product_webelement}</value>
+<iter>
+<var name="${product_webelement}">&lt;selenium.webdriver.remote.webelement.WebElement (session="f01179137500b476588f6d429ddd8b3b", element="f6116a5a-32e7-4bad-93a3-c3362fd9f9d2")&gt;</var>
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${product}</var>
+<arg>${product_webelement}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20221002 21:19:52.280" level="INFO">${product} = iphone X</msg>
+<status status="PASS" starttime="20221002 21:19:52.251" endtime="20221002 21:19:52.282"/>
+</kw>
+<kw name="Append To List" library="Collections">
+<arg>${list_product_actual}</arg>
+<arg>${product}</arg>
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<status status="PASS" starttime="20221002 21:19:52.285" endtime="20221002 21:19:52.286"/>
+</kw>
+<status status="PASS" starttime="20221002 21:19:52.250" endtime="20221002 21:19:52.286"/>
+</iter>
+<iter>
+<var name="${product_webelement}">&lt;selenium.webdriver.remote.webelement.WebElement (session="f01179137500b476588f6d429ddd8b3b", element="47c54bd7-eee3-43db-9338-36f1bde0f42d")&gt;</var>
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${product}</var>
+<arg>${product_webelement}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20221002 21:19:52.326" level="INFO">${product} = Samsung Note 8</msg>
+<status status="PASS" starttime="20221002 21:19:52.287" endtime="20221002 21:19:52.326"/>
+</kw>
+<kw name="Append To List" library="Collections">
+<arg>${list_product_actual}</arg>
+<arg>${product}</arg>
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<status status="PASS" starttime="20221002 21:19:52.327" endtime="20221002 21:19:52.327"/>
+</kw>
+<status status="PASS" starttime="20221002 21:19:52.287" endtime="20221002 21:19:52.328"/>
+</iter>
+<status status="PASS" starttime="20221002 21:19:52.250" endtime="20221002 21:19:52.328"/>
+</for>
+<kw name="Log" library="BuiltIn">
+<arg>${list_product_actual}</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20221002 21:19:52.330" level="INFO">['iphone X', 'Samsung Note 8']</msg>
+<status status="PASS" starttime="20221002 21:19:52.329" endtime="20221002 21:19:52.330"/>
+</kw>
+<kw name="Lists Should Be Equal" library="Collections">
+<arg>${list_product}</arg>
+<arg>${list_product_actual}</arg>
+<arg>List products in cart are not correct</arg>
+<doc>Fails if given lists are unequal.</doc>
+<status status="PASS" starttime="20221002 21:19:52.331" endtime="20221002 21:19:52.333"/>
+</kw>
+<status status="PASS" starttime="20221002 21:19:52.208" endtime="20221002 21:19:52.334"/>
+</kw>
+<kw name="Click Checkout button to purchase">
+<kw name="Click Button" library="SeleniumLibrary">
+<arg>//button[contains(text(),'Checkout')]</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<msg timestamp="20221002 21:19:52.336" level="INFO">Clicking button '//button[contains(text(),'Checkout')]'.</msg>
+<status status="PASS" starttime="20221002 21:19:52.336" endtime="20221002 21:19:52.663"/>
+</kw>
+<status status="PASS" starttime="20221002 21:19:52.335" endtime="20221002 21:19:52.664"/>
+</kw>
+<kw name="Purchase item">
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>//input[@id='country']</arg>
+<arg>10</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20221002 21:19:52.666" endtime="20221002 21:19:53.117"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>//input[@id='country']</arg>
+<arg>India</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20221002 21:19:53.119" level="INFO">Typing text 'India' into text field '//input[@id='country']'.</msg>
+<status status="PASS" starttime="20221002 21:19:53.118" endtime="20221002 21:19:53.394"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>//a[text()='India']</arg>
+<arg>10</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20221002 21:19:53.395" endtime="20221002 21:19:58.575"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>//a[text()='India']</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20221002 21:19:58.576" level="INFO">Clicking element '//a[text()='India']'.</msg>
+<status status="PASS" starttime="20221002 21:19:58.575" endtime="20221002 21:19:58.713"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>//label[@for='checkbox2']</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20221002 21:19:58.715" level="INFO">Clicking element '//label[@for='checkbox2']'.</msg>
+<status status="PASS" starttime="20221002 21:19:58.714" endtime="20221002 21:19:58.833"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>//input[@value='Purchase']</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20221002 21:19:58.835" level="INFO">Clicking element '//input[@value='Purchase']'.</msg>
+<status status="PASS" starttime="20221002 21:19:58.834" endtime="20221002 21:19:58.956"/>
+</kw>
+<status status="PASS" starttime="20221002 21:19:52.664" endtime="20221002 21:19:58.956"/>
+</kw>
+<kw name="Verify purchase item successfully">
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>//div[contains(@class,'alert-success')]</arg>
+<arg>10</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20221002 21:19:58.958" endtime="20221002 21:19:59.007"/>
+</kw>
+<status status="PASS" starttime="20221002 21:19:58.957" endtime="20221002 21:19:59.008"/>
+</kw>
+<kw name="Close All Browsers" library="SeleniumLibrary">
+<doc>Closes all open browsers and resets the browser cache.</doc>
+<status status="PASS" starttime="20221002 21:19:59.009" endtime="20221002 21:20:01.780"/>
+</kw>
+<status status="PASS" starttime="20221002 21:19:30.765" endtime="20221002 21:20:01.781"/>
+</test>
+<doc>Add order to cart, checkout and verify</doc>
+<status status="PASS" starttime="20221002 21:19:30.049" endtime="20221002 21:20:01.785"/>
+</suite>
+<status status="PASS" starttime="20221002 21:19:30.013" endtime="20221002 21:20:01.788"/>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="1" fail="0" skip="0" id="s1" name="Tests">Tests</stat>
+<stat pass="1" fail="0" skip="0" id="s1-s1" name="TC02 Order Cart">Tests.TC02 Order Cart</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>

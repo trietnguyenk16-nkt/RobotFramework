@@ -1,0 +1,15 @@
+==============================================================================
+TC01 Login Failed DataDriven CSV :: This TC is to test login failed scenario  
+==============================================================================
+Invalid username                                                      | PASS |
+------------------------------------------------------------------------------
+Invalid password                                                      | PASS |
+------------------------------------------------------------------------------
+Invalid both                                                          | PASS |
+------------------------------------------------------------------------------
+Login With Credentials x and x                                        | PASS |
+------------------------------------------------------------------------------
+TC01 Login Failed DataDriven CSV :: This TC is to test login faile... | PASS |
+4 tests, 4 passed, 0 failed
+==============================================================================
+Output:  D:\LearningAndProjects\RobotFramework\tests\pabot_results\0\output.xml

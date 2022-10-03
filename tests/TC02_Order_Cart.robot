@@ -111,13 +111,13 @@ Verify purchase item successfully
 #IN-PROGRESS
 #Check the products in cart - try to use compare list - DONE
 #Try to create a list of product first then add to cart and compare - Create a list in variable instead of using Iphone X or Samsung in Keyword - DONE
-#Some keywords can go to function (create a page and put all related keywords in that page), such as: fill the login form
+#Some keywords can go to function (create a page and put all related keywords in that page), such as: fill the login form   - INPROGRESS (CREATE ROBOT FRAMEWORK PAGE)
 #Practice Robot Framework with #'Check the total price' keyword
-#Create custom keywords and in the custom keywords, use python code then in the robot framework file, call that custom keywords
-#Try to find a way to commit all of the code to git, github
+#Create custom keywords and in the custom keywords, use python code then in the robot framework file, call that custom keywords - INPROGRESS (CUSTOM KEYWORDS WITH PYTHON SELENIUM)
+#Try to find a way to commit all of the code to git, github - DONE
 #Try to find a way to use jenkins and build and run the robot framework code
 #Try to use tags (regression, sanity,...) - DONE
 #Try to use pabot (to run the TCs in parallel)
 #Try with TC that handle switch browser
-#Try with TC has Cookie like digital-easy.link  -
+#Try with TC has Cookie like digital-easy.link  - DONE
 #Learn more robotframework from this youtube channel SDET- QA Automation

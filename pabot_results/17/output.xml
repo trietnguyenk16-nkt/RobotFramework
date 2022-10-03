@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 5.0.1 (Python 3.9.13 on win32)" generated="20221002 21:19:51.049" rpa="false" schemaversion="3">
+<suite id="s1" name="Tests" source="D:\LearningAndProjects\RobotFramework\tests">
+<suite id="s1-s1" name="demoCustomKeywords" source="D:\LearningAndProjects\RobotFramework\tests\demoCustomKeywords.robot">
+<test id="s1-s1-t1" name="Show Log 4" line="24">
+<kw name="Add Product To Cart" library="CustomKeywordsDemo">
+<msg timestamp="20221002 21:19:51.344" level="INFO">HELLLLLLLLLLLLLOOOOOOOOOOOOOOOOOO</msg>
+<status status="PASS" starttime="20221002 21:19:51.342" endtime="20221002 21:19:51.344"/>
+</kw>
+<kw name="Take Argument Then Return" library="CustomKeywordsDemo">
+<var>${sum}</var>
+<arg>6</arg>
+<arg>7</arg>
+<msg timestamp="20221002 21:19:51.347" level="INFO">${sum} = 13</msg>
+<status status="PASS" starttime="20221002 21:19:51.345" endtime="20221002 21:19:51.347"/>
+</kw>
+<kw name="Log" library="BuiltIn">
+<arg>${sum}</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20221002 21:19:51.353" level="INFO">13</msg>
+<status status="PASS" starttime="20221002 21:19:51.349" endtime="20221002 21:19:51.354"/>
+</kw>
+<tag>Regression</tag>
+<status status="PASS" starttime="20221002 21:19:51.340" endtime="20221002 21:19:51.355"/>
+</test>
+<doc>Demo Custom Keywords</doc>
+<status status="PASS" starttime="20221002 21:19:51.293" endtime="20221002 21:19:51.357"/>
+</suite>
+<status status="PASS" starttime="20221002 21:19:51.134" endtime="20221002 21:19:51.366"/>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+<stat pass="1" fail="0" skip="0">Regression</stat>
+</tag>
+<suite>
+<stat pass="1" fail="0" skip="0" id="s1" name="Tests">Tests</stat>
+<stat pass="1" fail="0" skip="0" id="s1-s1" name="demoCustomKeywords">Tests.demoCustomKeywords</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>

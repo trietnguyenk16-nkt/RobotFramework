@@ -1,0 +1,2 @@
+[ ERROR ] RuntimeError catched in remotelib keyword execution. Maybe there is no connection - is pabot called with --pabotlib option? ErrorDetails: RuntimeError('Connection to remote server broken: [WinError 10061] No connection could be made because the target machine actively refused it')
+pabot.PabotLib#_close: threw an exception: is --pabotlib flag used? ErrorDetails: RuntimeError('Connection to remote server broken: [WinError 10061] No connection could be made because the target machine actively refused it')

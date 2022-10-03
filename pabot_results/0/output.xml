@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 5.0.1 (Python 3.9.13 on win32)" generated="20221002 21:18:59.220" rpa="false" schemaversion="3">
+<suite id="s1" name="Tests" source="D:\LearningAndProjects\RobotFramework\tests">
+<suite id="s1-s1" name="Demo" source="D:\LearningAndProjects\RobotFramework\tests\demo.robot">
+<test id="s1-s1-t1" name="Validate UnSuccessful Login" line="15">
+<kw name="Open Browser And Navigate To Page" library="SetUpTC" type="SETUP">
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>${url}</arg>
+<arg>${browser}</arg>
+<arg>executable_path=${executable_path}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20221002 21:18:59.871" level="INFO">Opening browser 'chrome' to base url 'https://www.rahulshettyacademy.com/loginpagePractise/'.</msg>
+<status status="PASS" starttime="20221002 21:18:59.870" endtime="20221002 21:19:14.863"/>
+</kw>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" starttime="20221002 21:19:14.889" endtime="20221002 21:19:15.856"/>
+</kw>
+<status status="PASS" starttime="20221002 21:18:59.869" endtime="20221002 21:19:16.077"/>
+</kw>
+<kw name="fill the login form">
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${id_username}</arg>
+<arg>rahulshettyacademy</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20221002 21:19:16.260" level="INFO">Typing text 'rahulshettyacademy' into text field 'id:username'.</msg>
+<status status="PASS" starttime="20221002 21:19:16.143" endtime="20221002 21:19:17.196"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${id_password}</arg>
+<arg>learning</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20221002 21:19:17.204" level="INFO">Typing text 'learning' into text field 'id:password'.</msg>
+<status status="PASS" starttime="20221002 21:19:17.202" endtime="20221002 21:19:17.958"/>
+</kw>
+<kw name="Select Checkbox" library="SeleniumLibrary">
+<arg>${id_agree}</arg>
+<doc>Selects the checkbox identified by ``locator``.</doc>
+<msg timestamp="20221002 21:19:17.961" level="INFO">Selecting checkbox 'id:terms'.</msg>
+<status status="PASS" starttime="20221002 21:19:17.959" endtime="20221002 21:19:18.827"/>
+</kw>
+<status status="PASS" starttime="20221002 21:19:16.127" endtime="20221002 21:19:18.828"/>
+</kw>
+<kw name="select type">
+<kw name="Select From List By Value" library="SeleniumLibrary">
+<arg>//form[@id='login-form']//select</arg>
+<arg>teach</arg>
+<doc>Selects options from selection list ``locator`` by ``values``.</doc>
+<msg timestamp="20221002 21:19:18.836" level="INFO">Selecting options from selection list '//form[@id='login-form']//select' by value teach.</msg>
+<status status="PASS" starttime="20221002 21:19:18.829" endtime="20221002 21:19:19.320"/>
+</kw>
+<status status="PASS" starttime="20221002 21:19:18.828" endtime="20221002 21:19:19.321"/>
+</kw>
+<kw name="select privilege">
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>//label[input[@id='usertype'] and span[text()=' User']]/span[2]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20221002 21:19:19.324" level="INFO">Clicking element '//label[input[@id='usertype'] and span[text()=' User']]/span[2]'.</msg>
+<status status="PASS" starttime="20221002 21:19:19.322" endtime="20221002 21:19:19.711"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>id:okayBtn</arg>
+<arg>3</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20221002 21:19:19.711" endtime="20221002 21:19:20.279"/>
+</kw>
+<kw name="Click Button" library="SeleniumLibrary">
+<arg>id:okayBtn</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<msg timestamp="20221002 21:19:20.285" level="INFO">Clicking button 'id:okayBtn'.</msg>
+<status status="PASS" starttime="20221002 21:19:20.279" endtime="20221002 21:19:20.562"/>
+</kw>
+<status status="PASS" starttime="20221002 21:19:19.321" endtime="20221002 21:19:20.574"/>
+</kw>
+<kw name="sign in and verify sign in successfully">
+<kw name="Click Button" library="SeleniumLibrary">
+<arg>${id_signin}</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<msg timestamp="20221002 21:19:20.577" level="INFO">Clicking button 'id:signInBtn'.</msg>
+<status status="PASS" starttime="20221002 21:19:20.576" endtime="20221002 21:19:20.991"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${xpath_text}</arg>
+<arg>3</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20221002 21:19:20.991" endtime="20221002 21:19:26.666"/>
+</kw>
+<kw name="Element Text Should Be" library="SeleniumLibrary">
+<arg>${xpath_text}</arg>
+<arg>ProtoCommerce Home</arg>
+<arg>Sigin Failed</arg>
+<doc>Verifies that element ``locator`` contains exact the text ``expected``.</doc>
+<msg timestamp="20221002 21:19:26.670" level="INFO">Verifying element '//div[@class='container']/a' contains exact text 'ProtoCommerce Home'.</msg>
+<status status="PASS" starttime="20221002 21:19:26.668" endtime="20221002 21:19:26.708"/>
+</kw>
+<status status="PASS" starttime="20221002 21:19:20.575" endtime="20221002 21:19:26.708"/>
+</kw>
+<kw name="close browser">
+<kw name="Close All Browsers" library="SeleniumLibrary">
+<doc>Closes all open browsers and resets the browser cache.</doc>
+<status status="PASS" starttime="20221002 21:19:26.710" endtime="20221002 21:19:29.281"/>
+</kw>
+<status status="PASS" starttime="20221002 21:19:26.709" endtime="20221002 21:19:29.282"/>
+</kw>
+<status status="PASS" starttime="20221002 21:18:59.868" endtime="20221002 21:19:29.284"/>
+</test>
+<doc>To validate the login form</doc>
+<status status="PASS" starttime="20221002 21:18:59.276" endtime="20221002 21:19:29.290"/>
+</suite>
+<status status="PASS" starttime="20221002 21:18:59.246" endtime="20221002 21:19:29.294"/>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="1" fail="0" skip="0" id="s1" name="Tests">Tests</stat>
+<stat pass="1" fail="0" skip="0" id="s1-s1" name="Demo">Tests.Demo</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
