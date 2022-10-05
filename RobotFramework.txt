@@ -145,3 +145,7 @@ Pabot helps to run test in parallel.
 Install: pip install -U robotframework-pabot
 + To run all test suites in parallel: pabot .
 + To run test cases in a specific suite in parallel: pabot –testlevelsplit filename.robot
+
+10/ To run api testing by robot framework
+We need to install Requestslibrary by using: pip install robotframework-requests
+Then search for the keywords of RequestsLibrary in this link: https://marketsquare.github.io/robotframework-requests/doc/RequestsLibrary.html#library-documentation-top

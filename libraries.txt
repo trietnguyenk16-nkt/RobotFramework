@@ -1,0 +1,4 @@
+robotframework==5.0.1
+robotframework-seleniumlibrary==6.0.0
+robotframework-datadriver==1.6.1
+robotframework-datadriver[xls]
