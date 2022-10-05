@@ -21,7 +21,7 @@ Validate Login Failed With Incorrect User Name
     Close All Browsers
 
 Validate Login Failed With Incorrect Password
-    Input User Name     rahulshettyacademy
+    Input User Name     rahulshettyacademyTEST
     Input Password      invalidPassword
     Check Agree checkbox
     Sign In And Verify Sign In Failed
